@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { add } from './todoSlice'
+import { Button, Form, Input } from 'antd'
 
 export default function InputComponent() {
     const dispatch = useDispatch()
@@ -10,8 +11,27 @@ export default function InputComponent() {
     }
     return (
         <div>
-            <input type="text" onChange={onInputChange} />
-            <button onClick={() => dispatch(add(todo))}>Add</button>
+            <Form
+                layout='vertical'
+                onFinish={() => {
+                    dispatch(add(todo))
+                }
+                }
+            >
+                <Form.Item
+                    name={'text'}
+                    rules={[
+                        {
+                            required: true,
+                        },
+                    ]}
+                >
+                    <Input onChange={onInputChange} style={{ width: 300 }} />
+                </Form.Item>
+                <Form.Item>
+                    <Button htmlType="submit">Add</Button>
+                </Form.Item>
+            </Form>
         </div>
     )
 }
