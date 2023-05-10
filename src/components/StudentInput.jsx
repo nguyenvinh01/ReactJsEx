@@ -10,6 +10,7 @@ export default function StudentInput() {
         <div>
             <Form
                 onFinish={() => { dispatch(addStudent(name)) }}
+                style={{ width: 400 }}
             >
                 <Form.Item
                     label='Ten hoc sinh'
