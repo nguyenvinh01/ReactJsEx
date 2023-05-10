@@ -4,8 +4,7 @@ export const phonebookSLice = createSlice({
     name: 'phonebook',
     initialState: {
         phoneBook: [],
-        filterOption: 'all',
-        condition: ''
+        filterOption: true,
     },
     reducers: {
         addPhoneBook: (state, action) => {
@@ -21,7 +20,7 @@ export const phonebookSLice = createSlice({
         },
         addFavorite: (state, action) => {
             const index = state.phoneBook.findIndex((num) => num.id == action.payload)
-            console.log(index);
+            console.log(state.condition, 111122);
             state.phoneBook[index].status = true
         },
         deleteNum: (state, action) => {
@@ -30,7 +29,8 @@ export const phonebookSLice = createSlice({
         },
         filterOption: (state, action) => {
             state.filterOption = action.payload
-            state.condition = action.payload == 'all' ? 'pBook.status == true || pBook.status == false' : 'pBook.status == true'
+            // state.condition = (action.payload) ? 'pBook.status == true' : 'pBook.status == false'
+            state.condition = action.payload;
         }
     }
 })
