@@ -1,0 +1,39 @@
+{
+    "posts": [
+      {
+        "id": 1,
+        "title": "Hello",
+        "author": "Cee"
+      },
+      {
+        "id": 2,
+        "title": "Learner",
+        "author": "Hung"
+      },
+      {
+        "id": 3,
+        "title": "Welcome",
+        "author": "Cee"
+      },
+      {
+        "id": 4,
+        "title": "To",
+        "author": "Hung"
+      },
+      {
+        "id": 4,
+        "title": "ReactJs",
+        "author": "Cee"
+      }
+    ],
+    "comments": [
+      {
+        "id": 1,
+        "body": "some comment",
+        "postId": 1
+      }
+    ],
+    "profile": {
+      "name": "typicode"
+    }
+  }
