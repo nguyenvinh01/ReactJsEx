@@ -23,7 +23,7 @@ const TodoService = {
     },
     deleteTodoList: async (params) => {
         // console.log(params);
-        const res = await axios.delete(`http://localhost:3000/todos/${params.id}`)
+        const res = await axios.delete(`http://localhost:3000/todos/${params}`)
         // console.log(res);
         // return res
     }
