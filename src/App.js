@@ -17,13 +17,16 @@ function App() {
 
   const [editingTodoId, setEditingTodoId] = useState(null);
   const [editedTodoTitle, setEditedTodoTitle] = useState('');
+  const [newTodo, setNewTodo] = useState('');
 
   const handleAddTodo = () => {
-    const newTodo = {
-      title: 'New Todo',
+
+    const newTodos = {
+      title: newTodo,
       completed: false,
     };
-    dispatch(addTodo(newTodo));
+    dispatch(addTodo(newTodos));
+    setNewTodo('')
   };
 
   const handleUpdateTodo = (todo) => {
@@ -47,6 +50,7 @@ function App() {
   return (
     <div className="App">
       <h1>Todo List</h1>
+      <input value={newTodo} onChange={(e) => setNewTodo(e.target.value)} />
       <button onClick={handleAddTodo}>Add Todo</button>
       <ul>
         {todoList.map((todo) => (
